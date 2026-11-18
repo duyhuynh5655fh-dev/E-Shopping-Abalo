@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# E-Shopping-Abalo
-=======
 # E-Shopping-Abalo 🛒
 
 **A Full-Stack E-Commerce Web Application**
