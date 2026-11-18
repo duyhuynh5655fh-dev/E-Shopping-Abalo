@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-js11-dom-get</title>
+</head>
+<body>
+    <p id="byId"> getElementById</p>
+    <p class="byClass"> getElementsByClassName</p>
+    <p class="byTag"> getElementsByTagName</p>
+<script>
+    'use strict';
+    // Change the content of the element with id "byId"
+    document.getElementById('byId').innerHTML = "<h2>Hallo</h2>";
+
+    // Change content for elements with class "byClass"
+    let elementsByClass = document.getElementsByClassName('byClass');
+    for (let element of elementsByClass) {
+        element.innerText = ' Welt';
+    }
+
+    // Change attributes for all <p> elements
+    let pElements = document.getElementsByTagName('p');
+    for (let p of pElements) {
+        p.setAttribute('style', 'color: red;');
+    }
+
+
+</script>
+</body>
+</html>

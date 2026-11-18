@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-js6-kontrollstrukturen</title>
+</head>
+<body>
+<script>
+    'use strict';
+
+    // if-else
+    let x = 3;
+    if (x < 3) {
+        console.log('< 3');
+    } else if (x === 3) {
+        console.log('= 3');
+    } else {
+        console.log('else');
+    }
+
+    // switch-case
+    let a = 'test';
+    switch (typeof a) {
+        case 'number':
+            console.log('a is number');
+            break;
+        case 'string':
+            console.log('a is string');
+            break;
+        default:
+            console.log('a is other data type');
+    }
+
+    // for
+    for (let i = 0; i < 4; i++) {
+        console.log('for:', i);
+    }
+
+    // while
+    let j = 0;
+    while (j < 4) {
+        console.log('while:', j);
+        j++;
+    }
+
+    // do..while
+    let k = 0;
+    do {
+        console.log('do..while:', k);
+        k++;
+    } while (k < 4);
+</script>
+</body>
+</html>

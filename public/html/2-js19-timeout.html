@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-js19-timeout</title>
+    <style>
+        /* Style for the element */
+        .color-box {
+            width: 200px;
+            height: 200px;
+            background-color: white; /* Default background color */
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+            text-align: center;
+            transition: background-color 0.3s ease; /* Smooth transition */
+        }
+    </style>
+</head>
+<body>
+<!-- The element that changes background color -->
+<div class="color-box" id="colorBox">
+    Hintergrund
+</div>
+
+<div class="gif-box" id="gifBox">
+    <img src="../images/gif/arisu.gif" alt="gif">
+</div>
+<script>
+    // Select the element
+    const box = document.getElementById('colorBox');
+    const gifBox = document.getElementById('gifBox');
+    const imgItem = document.getElementsByTagName('img')[0];
+    imgItem.style.width = '100%';
+    imgItem.style.height = '100%';
+    gifBox.style.position = 'absolute';
+    gifBox.style.height = '100px';
+    gifBox.style.width = '100px';
+    gifBox.style.top = '50px';
+    gifBox.style.left = '50px';
+    gifBox.style.transition = 'all 1s ease';
+    // Initialize a variable to track the current color
+    let isRed = false;
+    let gifPos = 1;
+
+    // Function to toggle the background color
+    function toggleBackgroundColor() {
+        if (isRed) {
+            box.style.backgroundColor = 'white'; // Change to white
+        } else {
+            box.style.backgroundColor = 'red'; // Change to red
+        }
+        isRed = !isRed; // Alternate the color state
+    }
+
+    // Function to change gif position
+    function changeGifPosition() {
+        switch (gifPos) {
+            case 0:
+                gifBox.style.top = '50px';
+                gifBox.style.left = '50px';
+                gifPos = 1;
+                break;
+            case 1:
+                gifBox.style.top = '50px';
+                gifBox.style.left = 'calc(100% - 150px)';
+                gifPos = 2;
+                break;
+            case 2:
+                gifBox.style.top = 'calc(100% - 150px)';
+                gifBox.style.left = 'calc(100% - 150px)';
+                gifPos = 3;
+                break;
+            default:
+                gifBox.style.top = 'calc(100% - 150px)';
+                gifBox.style.left = '50px';
+                gifPos = 0;
+                break;
+        }
+    }
+
+
+    // Set an interval to toggle the color every second (1000ms)
+    setInterval(toggleBackgroundColor, 1000);
+    setInterval(changeGifPosition, 1000);
+</script>
+</body>
+</html>

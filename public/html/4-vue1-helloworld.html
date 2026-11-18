@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <title>4-vue1-helloworld</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <div id="myapp">
+            {{message}}
+        </div>
+
+        <script type="module">
+            const { createApp } = Vue
+            const vm = createApp({
+                data() {
+                    return {'message': 'hallo welt'}
+                }
+            }).mount('#myapp')
+            window.setTimeout(function () {
+                vm.$data.message += ' HALLO WELT';
+            },2000);
+        </script>
+    </body>
+</html>

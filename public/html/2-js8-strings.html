@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-js8-strings</title>
+</head>
+<body>
+<script>
+    'use strict';
+
+    let str = '123 fourfive six ';
+
+    console.log('length:', str.length);
+    console.log('indexOf four:', str.indexOf('four'));
+    console.log('lastIndexOf:', str.lastIndexOf('f'));
+
+    console.log('substr:', str.substr(2, 3));
+    console.log('replace:', str.replace('five', '5'));
+    console.log('trim:', str.trim().length);
+
+    let str2 = 'seveneight 910';
+    console.log('concat:', str.concat(str2));
+
+    let str3 = 'TEN eleven';
+    console.log('toLowerCase:', str3.toLowerCase());
+    console.log('toUpperCase:', str3.toUpperCase());
+</script>
+</body>
+</html>

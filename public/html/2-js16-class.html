@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-js16-class</title>
+</head>
+<body>
+
+<script>
+    'use strict';
+
+    class User {
+        constructor(firstname, lastname) {
+            this._firstname = firstname;
+            this._lastname = lastname;
+        }
+
+        setFirstname(firstname) {
+            this._firstname = firstname;
+        }
+        setLastname(lastname) {
+            this._lastname = lastname;
+        }
+        getFirstname() {
+            return this._firstname;
+        }
+        getLastname() {
+            return this._lastname;
+        }
+    }
+
+    class Buyer extends User {
+        constructor(firstname, lastname, lastBuy) {
+            super(firstname, lastname);
+            this._lastBuy = lastBuy;
+        }
+
+        getLastBuy() {
+            return this._lastBuy;
+        }
+
+        setLastBuy(lastBuy) {
+            this._lastBuy = lastBuy;
+        }
+    }
+
+    const user = new User('Max', 'Mustermann');
+    console.log(user.getFirstname());
+    console.log(user.getLastname());
+    console.log(user);
+
+    const buyer = new Buyer('Max', 'Mustermann', '2021-01-01');
+    console.log(buyer.getLastBuy());
+    console.log(buyer);
+</script>
+</body>
+</html>

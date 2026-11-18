@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-js17-click</title>
+</head>
+<body>
+    <div id="block">
+        <input type="button" id="inputButton" value="Farbe wechseln">
+    </div>
+<script>
+    'use strict';
+    let block = document.getElementById('block');
+    block.style.width = '100px';
+    block.style.height = '100px';
+    block.style.backgroundColor = 'red';
+    let inputButton = document.getElementById('inputButton');
+    inputButton.addEventListener('click', function() {
+        if (block.style.backgroundColor === 'red') {
+            block.style.backgroundColor = 'yellow';
+        } else if (block.style.backgroundColor === 'yellow') {
+            block.style.backgroundColor = 'green';
+        } else if (block.style.backgroundColor === 'green') {
+            block.style.backgroundColor = 'red';
+        }
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-js1-hallowelt</title>
+</head>
+<body>
+<button id="openDialog">Dialog öffnen</button>
+
+<dialog id="myDialog">
+    <form method="dialog">
+        <p>Dies ist ein einfaches Dialogfenster.</p>
+        <button>Schließen</button>
+    </form>
+</dialog>
+
+<script>
+    const dialog = document.getElementById('myDialog');
+    document.getElementById('openDialog').addEventListener('click', () => {
+        dialog.show();
+    });
+</script>
+</body>
+</html>

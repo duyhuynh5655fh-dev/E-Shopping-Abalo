@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-js14-cookie</title>
+</head>
+<body>
+<script>
+    'use strict';
+
+    // Function to get a specific cookie by name
+    function getCookie(name) {
+        const cookies = document.cookie.split('; '); // Split cookies into key-value pairs
+        for (let cookie of cookies) {
+            const [key, value] = cookie.split('='); // Split each cookie into key and value
+            if (key === name) {
+                return parseInt(value); // Return the value as a number
+            }
+        }
+        return null; // Return null if the cookie is not found
+    }
+
+    let cnt = getCookie('counter') || 0;
+
+    cnt++;
+
+    document.cookie = `counter=${cnt}; path=/`;
+
+    console.log("Cookies:", document.cookie);
+
+</script>
+</body>
+</html>

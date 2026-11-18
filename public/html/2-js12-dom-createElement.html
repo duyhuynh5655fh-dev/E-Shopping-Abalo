@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-js12-dom-createElement</title>
+</head>
+<body>
+<script>
+    'use strict';
+
+    const formContainer = document.createElement('div');
+    formContainer.setAttribute('id', 'formContainer');
+
+    // Form
+    const form = document.createElement('form');
+
+    // Text-Eingabe
+    const inputText = document.createElement('input');
+    inputText.setAttribute('type', 'text');
+    inputText.setAttribute('placeholder', 'inputText');
+
+    // Dropdown-Eingabe
+    const inputDropdown = document.createElement('select');
+    inputDropdown.setAttribute('name', 'inputDropdown');
+
+    const option1 = document.createElement('option');
+    option1.setAttribute('value', 'option1');
+    option1.textContent = 'option1';
+
+    const option2 = document.createElement('option');
+    option2.setAttribute('value', 'option2');
+    option2.textContent = 'option2';
+
+    inputDropdown.appendChild(option1);
+    inputDropdown.appendChild(option2);
+
+    // Add Eingabe to Form
+    form.appendChild(inputText);
+    form.appendChild(document.createElement('br'));
+    form.appendChild(inputDropdown);
+
+    // Add Form to Container
+    formContainer.appendChild(form);
+
+    document.body.appendChild(formContainer);
+
+</script>
+</body>
+</html>

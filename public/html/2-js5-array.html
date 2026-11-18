@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-js5-array</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        console.log("a)");
+        console.log("for(...) {...}");
+        let arr = ['erstes', 'zweites', 3, 4];
+        for (let i = 0; i < arr.length; i++) {
+            console.log(i + " => " + arr[i]);
+        }
+
+        console.log("forEach() {...}");
+        arr.forEach(function (element, index) {
+            console.log(index + " => " + element);
+        });
+
+        console.log("for...of");
+        let i = 0;
+        for (const el of arr) {
+            console.log(i + " => " + el);
+            i++;
+        }
+
+        console.log("b)");
+        arr.push('neu_element');
+        console.log('push:', arr);
+        arr.pop();
+        console.log('pop:', arr);
+        arr[2] = 10;
+        console.log('Nach Änderung:', arr);
+
+        console.log("c)");
+        console.log('length:', arr.length);
+        function ascSort(array, numFirst) {
+            return array.slice().sort((a, b) => {
+                if (typeof a === "number" && typeof b === "number") {
+                    return a - b;
+                }
+                if (typeof a === "string" && typeof b === "string") {
+                    return a.localeCompare(b);
+                }
+                // Wenn gemischt: je nach numFirst Entscheidung
+                if (numFirst) {
+                    return typeof a === "number" ? -1 : 1; // Zahlen zuerst
+                } else {
+                    return typeof a === "string" ? -1 : 1; // Strings zuerst
+                }
+            });
+        }
+        console.log('sort:', ascSort(arr, true));
+        console.log('find:', arr.find(x => typeof x === 'number')); // oder x.includes('ti') (case-sensitive) oder x.toLowerCase().includes("ti")
+        console.log('filter:', arr.filter(x => typeof x === 'string'));
+        console.log('map:', arr.map(x => x + '!'));
+        console.log('slice:', arr.slice(1, 3));
+    </script>
+</body>
+</html>

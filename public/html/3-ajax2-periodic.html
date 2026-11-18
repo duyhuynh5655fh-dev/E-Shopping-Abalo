@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3-ajax2-periodic</title>
+</head>
+<body>
+<!-- The element that changes background color -->
+<div class="color-box" id="colorBox">
+    Hintergrund
+</div>
+
+<div class="gif-box" id="gifBox">
+    <img src="../images/gif/arisu.gif" alt="gif">
+</div>
+<script>
+    'use strict'
+
+    window.setInterval(() => {
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', '../static/message.json');
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    try {
+                        let data = JSON.parse(xhr.responseText);
+                        const li = document.createElement('li');
+                        li.innerHTML = data.message;
+                        document.getElementById('colorBox').appendChild(li);
+                    } catch (e) {
+                        console.error("Fehler beim Parsen der JSON:", e);
+                    }
+                } else {
+                    console.error(xhr.statusText);
+                }
+            }
+        }
+        xhr.onerror = function () {
+            console.log(xhr.statusText);
+        };
+        xhr.send();
+    }, 3000);
+
+
+
+</script>
+</body>
+</html>

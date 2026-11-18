@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-js15-objekte</title>
+</head>
+<body>
+<script>
+    'use strict';
+
+    // 1. JSON-Objekt
+    const carJson = {
+        _name: "BMW",
+        _type: "SUV",
+        get name() {
+            return this._name;
+        },
+        set name(value) {
+            this._name = value;
+        },
+        get type() {
+            return this._type;
+        },
+        set type(value) {
+            this._type = value;
+        },
+        writeToConsole() {
+            console.log(`name=${this._name}, type=${this._type}`);
+        }
+    };
+
+    // 2. Function Constructor
+    function CarFunction(name, type) {
+        let _name = name;
+        let _type = type;
+
+        this.getName = function() {
+            return _name;
+        };
+        this.setName = function(value) {
+            _name = value;
+        };
+        this.getType = function() {
+            return _type;
+        };
+        this.setType = function(value) {
+            _type = value;
+        };
+        this.writeToConsole = function() {
+            console.log(`name=${_name}, type=${_type}`);
+        };
+    }
+
+    const carFunc = new CarFunction("Audi", "Cabrio");
+
+    // 3. Class
+    class CarClass {
+        constructor(name, type) {
+            this._name = name;
+            this._type = type;
+        }
+
+        get name() {
+            return this._name;
+        }
+
+        set name(value) {
+            this._name = value;
+        }
+
+        get type() {
+            return this._type;
+        }
+
+        set type(value) {
+            this._type = value;
+        }
+
+        writeToConsole() {
+            console.log(`name=${this._name}, type=${this._type}`);
+        }
+    }
+
+    const carClass = new CarClass("Mercedes", "Limousine");
+
+    // Ausgabe in der Konsole
+    console.log("JSON-Objekt:");
+    carJson.writeToConsole();
+    console.log(carJson);
+
+    console.log("Function-Objekt:");
+    carFunc.writeToConsole();
+    console.log(carFunc);
+
+    console.log("Class-Objekt:");
+    carClass.writeToConsole();
+    console.log(carClass);
+
+</script>
+</body>
+</html>

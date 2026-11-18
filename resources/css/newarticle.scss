@@ -1,0 +1,59 @@
+// Variables
+$primary-color: #8cb58c;
+$secondary-color: #346039;
+$danger-color: red;
+$border-radius: 6px;
+$transition: 0.2s;
+
+// Nesting + BEM + Mixin
+.article-form {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-family: Arial, sans-serif;
+
+    &__label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    &__input,
+    &__textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 16px;
+        border: 1px solid #ccc;
+        border-radius: $border-radius;
+        font-size: 14px;
+        box-sizing: border-box;
+        transition: border-color $transition;
+
+        &:focus {
+            border-color: $primary-color;
+            outline: none;
+        }
+    }
+
+    &__textarea {
+        resize: vertical;
+        min-height: 80px;
+    }
+
+    &__button {
+        padding: 10px 20px;
+        font-size: 15px;
+        border: none;
+        border-radius: $border-radius;
+        cursor: pointer;
+        transition: background-color $transition;
+
+        &:hover {
+            background-color: $secondary-color;
+        }
+    }
+}

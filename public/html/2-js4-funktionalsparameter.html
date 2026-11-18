@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-js4-funktionalsparameter</title>
+</head>
+<body>
+<input type="text" id="erstzahler" placeholder="Erstzahler">
+<span> * </span>
+<input type="text" id="zweitzahler" placeholder="Zweitzahler">
+<span> = </span>
+<span id="ergebnis">ergebnis</span>
+<br><br>
+<button type="button" id="mulButton">Zahlen multiplizieren</button>
+
+<script>
+    'use strict';
+
+    let mulButton = document.getElementById('mulButton');
+    let ergebnis = document.getElementById('ergebnis');
+
+    function multipliziere(x, y) {
+        return x * y;
+    }
+
+    function rechner(a, b, operation) {
+        return operation(a, b);
+    }
+
+    mulButton.addEventListener('click', function () {
+        let erstzahler = parseFloat(document.getElementById('erstzahler').value) || 0;
+        let zweitzahler = parseFloat(document.getElementById('zweitzahler').value) || 0;
+
+        ergebnis.innerText = rechner(erstzahler, zweitzahler, multipliziere);
+        console.log(rechner(erstzahler, zweitzahler, multipliziere));
+    });
+</script>
+
+</body>
+</html>

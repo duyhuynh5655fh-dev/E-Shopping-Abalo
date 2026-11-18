@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <title>4-vue2-array</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+<div id="myapp">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr v-for="(article, index) in articles" v-bind:key="index">
+                <td>{{article.name}}</td>
+                <td>{{article.price/100}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <button @click="addArticle">addArticle</button>
+</div>
+
+<script type="module">
+    const { createApp } = Vue
+    const vm = createApp({
+        data() {
+            return {
+                articles : [
+                    {name: "Reifen", price: 8290},
+                    {name: "Antenne drehbar. Leicht geknickt", price: 1400},
+                    {name: "Opel Kadett C 1992 – wie neu", price: 150000},
+                ]
+            };
+        },
+        methods: {
+            addArticle() {
+                this.$data.articles.push({name : "Radio-UKW", price : 4500});
+            }
+        }
+    }).mount('#myapp')
+
+</script>
+</body>
+</html>

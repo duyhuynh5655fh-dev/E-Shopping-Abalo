@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-js18-mouseover</title>
+    <style>
+        /* Style for the area */
+        .hover-area {
+            width: 200px;
+            height: 200px;
+            background-color: white; /* Default color */
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.2s ease-in-out; /* Smooth transition */
+        }
+    </style>
+</head>
+<body>
+<!-- The area that responds to mouseover and mouseout -->
+<div class="hover-area" id="hoverArea">
+    Bewege die Maus hier!
+</div>
+
+<script>
+    // Select the area
+    const area = document.getElementById('hoverArea');
+
+    // Add a mouseover event listener to set background green
+    area.addEventListener('mouseenter', () => {
+        area.style.backgroundColor = 'green';
+    });
+
+    // Add a mouseout event listener to set background white
+    area.addEventListener('mouseleave', () => {
+        area.style.backgroundColor = 'white';
+    });
+</script>
+</body>
+</html>

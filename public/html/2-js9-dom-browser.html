@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-js9-dom-browser</title>
+</head>
+<body>
+<script>
+    'use strict';
+    let userAgent = navigator.userAgent;
+    let browser = '';
+    if( userAgent.includes('Chrome') ) browser += 'Chrome ';
+    if( userAgent.includes('Firefox') ) browser += 'Firefox ';
+    if( userAgent.includes('Safari') ) browser += 'Safari ';
+    if( userAgent.includes('Edge') ) browser += 'Edge ';
+    if( userAgent.includes('Opera') ) browser += 'Opera ';
+    if( userAgent.includes('MSIE') ) browser += 'Internet Explorer ';
+    console.log(browser);
+</script>
+</body>
+</html>

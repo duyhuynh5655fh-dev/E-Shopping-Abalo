@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-js13-dom-overlay</title>
+</head>
+<body>
+<script>
+    'use strict';
+    const overlay = document.createElement('div');
+    overlay.innerText = 'Hallo Welt';
+    overlay.style.backgroundColor = 'green';
+    overlay.style.position = 'absolute';
+    overlay.style.bottom = '0px';
+    overlay.style.width = '100px';
+    overlay.style.height = '20px';
+
+    document.body.appendChild(overlay);
+</script>
+</body>
+</html>
